@@ -71,7 +71,7 @@ function Index() {
             backgroundColor: appConfig.theme.colors.neutrals['200'],
             opacity: 1,
           }}
-        >gut
+        >
           {/* Formulário */}
           <Box
             as="form"
