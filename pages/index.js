@@ -1,5 +1,6 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import appConfig from '../config.json'
+import React from 'react'
 
 function GlobalStyle() {
   return (
@@ -43,7 +44,7 @@ function Title(props) {
 }
 
 function Index() {
-  const username = 'gabrielrtlima';
+  const [username, setUsername] = React.useState('')
 
   return (
     <>
@@ -86,6 +87,12 @@ function Index() {
             </Text>
 
             <TextField
+               placeholder='Insira seu usuario do GitHub'
+               value={username}
+               onChange={function (event){
+                  const textValue = event.target.value;
+                  setUsername(textValue)
+               }}
               fullWidth
               textFieldColors={{
                 neutral: {
@@ -130,7 +137,7 @@ function Index() {
                 borderRadius: '50%',
                 marginBottom: '16px',
               }}
-              src={`https://github.com/${username}.png`}
+              src={`https://github.com/${username}.png` === `https://github.com/.png` ? `https://cdn0.iconfinder.com/data/icons/black-cat-emoticon-filled/64/cute_cat_kitten_face_per_avatar-02-512.png` : `https://github.com/${username}.png` }
             />
             <Text
               variant="body4"
